@@ -12,7 +12,7 @@ From `test_argparse.c`
 ```C
 int main(int argc, const char** argv)
 {
-    
+    // These notes are optional (can be NULL) and are printed as part of describing usage
     const char usage[] = "test_argparse [options] [inputs]";
     const char description[] = "Use this executable to test James' argparse library";
     const char epilog[] = "Thanks for playing!";
