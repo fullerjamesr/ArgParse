@@ -3,7 +3,7 @@ A simple C library to parse flags and values from command line input and provide
 
 ## Bevavior and Features
 * Command line options can have short (single character preceded by '-') and/or long (string preceeded by '--') forms. Only one is required. Each option has a description, which can be displayed (e.g., when something goes wrong or the user passes `--help`).
-* Options can be boolean flags or require a value. The value can be a string, an int, an unsigned int (size_t) or double -- see the `enum ArgumentType` in `argparse.h` for all possible options.
+* Options can be boolean flags or require a value. The value can be a string, an int, an unsigned int (size_t) or double -- see the `enum ArgParseOptionType` in `argparse.h` for all possible options.
 * Values for options are parsed from either the next token (short or long form of the option) or can appear in the --long-form=value notation.
 * Tokens that are not options are assumed to be the main program arguments and are left in argv for the program to sort out.
 
@@ -46,7 +46,7 @@ int main(int argc, const char** argv)
     
     // Inputs gives the number of command line tokens that were not part of an option or its value. See the for loop below.
     int inputs = do_argparse(&argParseInfo, argc, argv);
-    // This is also printed if an OPT_HELP / ArgumentType.ARGPARSE_OPT_HELP option is encountered; in that case the program immediately quits
+    // This is also printed if an OPT_HELP / ArgParseOptionType.ARGPARSE_OPT_HELP option is encountered; in that case the program immediately quits
     print_usage(&argParseInfo);
     // print_state is useful for providing the user with a summary of the values of all options, regardless of whether the defaults were changed
     print_state(&argParseInfo);

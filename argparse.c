@@ -5,7 +5,7 @@
 #include "argparse.h"
 
 
-void print_usage(ArgParseInfo* argParseInfo)
+void print_usage(const ArgParseInfo* argParseInfo)
 {
     // Print header
     printf("\nUsage: %s\n\n", argParseInfo->usage ? argParseInfo->usage : "");
@@ -61,7 +61,8 @@ void print_usage(ArgParseInfo* argParseInfo)
     if(argParseInfo->epilog)
         printf("%s\n", argParseInfo->epilog);
 }
-void print_state(ArgParseInfo* argParseInfo)
+
+void print_state(const ArgParseInfo* argParseInfo)
 {
     // Determine the width of the longest option
     size_t long_option_len = 0;
@@ -126,7 +127,7 @@ void print_state(ArgParseInfo* argParseInfo)
         }
     }
 }
-int do_argparse(ArgParseInfo* argParseInfo, int argc, const char** argv)
+int do_argparse(const ArgParseInfo* argParseInfo, int argc, const char** argv)
 {
     int inputs_count = 0;
     

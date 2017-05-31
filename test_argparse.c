@@ -39,7 +39,7 @@ int main(int argc, const char** argv)
     
     // Inputs gives the number of command line tokens that were not part of an option or its value. See the for loop below.
     int inputs = do_argparse(&argParseInfo, argc, argv);
-    // This is also printed if an OPT_HELP / ArgumentType.ARGPARSE_OPT_HELP option is encountered; in that case the program immediately quits
+    // This is also printed if an OPT_HELP / ArgParseOptionType.ARGPARSE_OPT_HELP option is encountered; in that case the program immediately quits
     print_usage(&argParseInfo);
     // print_state is useful for providing the user with a summary of the values of all options, regardless of whether the defaults were changed
     print_state(&argParseInfo);
